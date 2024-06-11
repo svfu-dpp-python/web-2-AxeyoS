@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Анкета</h2>
+    <form action="submit_form.php" method="POST">
+        <div class="form-group">
+            <label">ФИО:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Ваши интересы:</label>
+            <label><input type="checkbox" id="interest1" name="interests" value="Спорт">Спорт</label>
+            <label><input type="checkbox" id="interest2" name="interests" value="Музыка">Музыка</label>
+            <label><input type="checkbox" id="interest3" name="interests" value="Путешествия">Путешествия</label>
+        </div>
+        
+        <!-- Переключатели radio -->
+        <div class="form-group">
+            <label>Уровень образования:</label>
+            <label><input type="radio" id="education1" name="education" value="Среднее" required>Среднее</label>
+            <label><input type="radio" id="education2" name="education" value="Высшее" required>Высшее</label>
+            <label><input type="radio" id="education3" name="education" value="Аспирантура" required>Аспирантура</label>
+        </div>
+
+        <div class="form-group">
+            <label>Возраст:</label>
+            <select id="age" name="age" required>
+                <option value="Under_18">До 18</option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55-64">55-64</option>
+                <option value="Over_65">65 и старше</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Электронная почта:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Примечания:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
